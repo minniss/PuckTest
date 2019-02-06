@@ -15,6 +15,7 @@
       console.log("Received JSON: ",j);
       elements.light.setValue(j.light*100);
       elements.temp.setValue(j.temp);
+     elements.batt.setValue(j.batt);
      
     } catch(e) {
       console.log("Received: ",line);
