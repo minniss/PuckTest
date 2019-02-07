@@ -9,9 +9,9 @@
   <script src="https://www.puck-js.com/puck.js"></script>  
   <script type="text/javascript" src="smoothie.js"></script>
   <script>
-    //var smoothie = new SmoothieChart();
-    //var line1 = new TimeSeries();
-    //line1.append(new Date().getTime(), 2000);  
+    var smoothie = new SmoothieChart();
+    var line1 = new TimeSeries();
+    line1.append(new Date().getTime(), 2000);  
   
   // Called when we get a line of data - updates the light color
   function onLine(line) {
@@ -41,8 +41,8 @@
   }
   var connection;
   function connectDevice() {
-    //smoothie.streamTo(document.getElementById("mycanvas"));
-    //smoothie.addTimeSeries(line1);
+    smoothie.streamTo(document.getElementById("mycanvas"));
+    smoothie.addTimeSeries(line1);
 
    
     Puck.connect(function(c) {
@@ -108,6 +108,6 @@
        TD.update({magy : 40*Math.sin(Date.now()/1000)+50});
      }, 100);
   </script>
-  <!-- <canvas id="mycanvas" width="400" height="100"></canvas> -->
+  <canvas id="mycanvas" width="400" height="100"></canvas>
  </body>
 </html>
