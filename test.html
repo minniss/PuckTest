@@ -11,11 +11,11 @@
   <script>
     var smoothie = new SmoothieChart();
     var line1 = new TimeSeries();
-    line1.append(new Date().getTime(), 2000);  
+    line1.append(new Date().getTime(), 0);  
    var line2 = new TimeSeries();
-    line2.append(new Date().getTime(), 2000);
+    line2.append(new Date().getTime(), 0);
    var line3 = new TimeSeries();
-    line3.append(new Date().getTime(), 2000);
+    line3.append(new Date().getTime(), 0);
   
   // Called when we get a line of data - updates the light color
   function onLine(line) {
