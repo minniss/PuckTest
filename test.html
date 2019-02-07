@@ -24,7 +24,8 @@
       elements.magz.setValue(j.mag.z);
       //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
       //elements.log.setValue('loggggggg......');
-      line1.append(new Date().getTime(), j.mag.x);     
+      line1.append(new Date().getTime(), j.mag.x);  
+      console.log('adding x'+j.mag.x);
      
     } catch(e) {
       console.log("Received: ",line);
