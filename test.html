@@ -13,7 +13,7 @@
   function onLine(line) {
     try {
       var j = JSON.parse(line);
-      console.log("Received JSON: ",j);
+      //console.log("Received JSON: ",j);
       elements.light.setValue(j.light*100);
       elements.temp.setValue(j.temp);
       //elements.temp2.setValue(j.temp);
@@ -25,7 +25,7 @@
       //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
       //elements.log.setValue('loggggggg......');
       line1.append(new Date().getTime(), j.mag.x);  
-      console.log('adding x'+j.mag.x);
+      console.log(j.mag.x);
      
     } catch(e) {
       console.log("Received: ",line);
