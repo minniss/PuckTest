@@ -28,13 +28,14 @@
       elements.magy.setValue(j.mag.y);
       elements.magz.setValue(j.mag.z);
       //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
-      
-     
-    } catch(e) {
-      console.log("Receiveddddddd: ",line);
      console.log("loggggggg......");
       line1.append(new Date().getTime(), j.mag.x);  
       console.log(j.mag.x);
+      
+     
+    } catch(e) {
+      console.log("Received: ",line);
+     
     }
   }
   var connection;
