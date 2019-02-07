@@ -23,12 +23,13 @@
       elements.magy.setValue(j.mag.y);
       elements.magz.setValue(j.mag.z);
       //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
-      console.log("loggggggg......");
-      line1.append(new Date().getTime(), j.mag.x);  
-      console.log(j.mag.x);
+      
      
     } catch(e) {
       console.log("Received: ",line);
+     console.log("loggggggg......");
+      line1.append(new Date().getTime(), j.mag.x);  
+      console.log(j.mag.x);
     }
   }
   var connection;
@@ -37,6 +38,7 @@
    var smoothie = new SmoothieChart();
    smoothie.streamTo(document.getElementById("mycanvas"));
    var line1 = new TimeSeries();
+   line1.append(new Date().getTime(), 2000);  
    smoothie.addTimeSeries(line1);
    
     Puck.connect(function(c) {
