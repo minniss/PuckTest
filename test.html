@@ -10,10 +10,10 @@
   <script type="text/javascript" src="smoothie.js"></script>
   <script>
       var smoothie = new SmoothieChart();
-   smoothie.streamTo(document.getElementById("mycanvas"));
+  
    var line1 = new TimeSeries();
    line1.append(new Date().getTime(), 2000);  
-   smoothie.addTimeSeries(line1);
+  
   // Called when we get a line of data - updates the light color
   function onLine(line) {
     try {
@@ -39,7 +39,8 @@
   }
   var connection;
   function connectDevice() {
-   
+    smoothie.streamTo(document.getElementById("mycanvas"));
+    smoothie.addTimeSeries(line1);
 
    
     Puck.connect(function(c) {
