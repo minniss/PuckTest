@@ -48,9 +48,9 @@
   var connection;
   function connectDevice() {
     smoothie.streamTo(document.getElementById("mycanvas"));
-    smoothie.addTimeSeries(line1, { strokeStyle:'rgb(0, 255, 0)', fillStyle:'rgba(0, 255, 0, 0.4)', lineWidth:1 });
-   smoothie.addTimeSeries(line2, { strokeStyle:'rgb(0, 0, 255)', fillStyle:'rgba(0, 0, 255, 0.4)', lineWidth:1 });
-   smoothie.addTimeSeries(line3, { strokeStyle:'rgb(255, 0, 0)', fillStyle:'rgba(255, 0, 0, 0.4)', lineWidth:1 });
+    smoothie.addTimeSeries(line1, { strokeStyle:'rgb(0, 255, 0)', lineWidth:2 });
+   smoothie.addTimeSeries(line2, { strokeStyle:'rgb(0, 0, 255)', lineWidth:2 });
+   smoothie.addTimeSeries(line3, { strokeStyle:'rgb(255, 0, 0)', lineWidth:2 });
 
    
     Puck.connect(function(c) {
@@ -116,6 +116,6 @@
        TD.update({magy : 40*Math.sin(Date.now()/1000)+50});
      }, 100);
   </script>
-  <canvas id="mycanvas" width="600" height="350"></canvas>
+  <canvas id="mycanvas" width="800" height="320"></canvas>
  </body>
 </html>
