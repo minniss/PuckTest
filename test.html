@@ -31,11 +31,6 @@
         return;
       }
 
-      //Puck.magOn();
-      Puck.on('mag', function(xyz) {
-        console.log('Meg On');
-        console.log(xyz);
-      });
       connection = c;
       // remove modal window
       elements.modal.remove();
@@ -63,6 +58,12 @@
             function() { console.log("Ready..."); });
           }, 1500);
         });
+      });
+
+      Puck.magOn();
+      Puck.on('mag', function(xyz) {
+        console.log('Mag On');
+        console.log(xyz);
       });
 
   }
