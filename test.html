@@ -23,7 +23,8 @@
       elements.magy.setValue(j.mag.y);
       elements.magz.setValue(j.mag.z);
       //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
-      elements.log.setValue('loggggggg......');
+      //elements.log.setValue('loggggggg......');
+      line1.append(new Date().getTime(), j.mag.x);     
      
     } catch(e) {
       console.log("Received: ",line);
@@ -31,8 +32,12 @@
   }
   var connection;
   function connectDevice() {
+   
    var smoothie = new SmoothieChart();
-smoothie.streamTo(document.getElementById("mycanvas"));
+   smoothie.streamTo(document.getElementById("mycanvas"));
+   var line1 = new TimeSeries();
+   smoothie.addTimeSeries(line1);
+   
     Puck.connect(function(c) {
       if (!c) {
         alert("Couldn't connect!");
