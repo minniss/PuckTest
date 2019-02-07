@@ -48,9 +48,9 @@
   var connection;
   function connectDevice() {
     smoothie.streamTo(document.getElementById("mycanvas"));
-    smoothie.addTimeSeries(line1);
-   smoothie.addTimeSeries(line2);
-   smoothie.addTimeSeries(line3);
+    smoothie.addTimeSeries(line1, { strokeStyle:'rgb(0, 255, 0)', fillStyle:'rgba(0, 255, 0, 0.4)', lineWidth:1 });
+   smoothie.addTimeSeries(line2, { strokeStyle:'rgb(0, 0, 255)', fillStyle:'rgba(0, 0, 255, 0.4)', lineWidth:1 });
+   smoothie.addTimeSeries(line3, { strokeStyle:'rgb(255, 0, 0)', fillStyle:'rgba(255, 0, 0, 0.4)', lineWidth:1 });
 
    
     Puck.connect(function(c) {
