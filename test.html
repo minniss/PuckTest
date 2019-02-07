@@ -30,6 +30,12 @@
         alert("Couldn't connect!");
         return;
       }
+
+      Puck.magOn();
+      Puck.on('mag', function(xyz) {
+        console.log('Meg On');
+        console.log(xyz);
+      });
       connection = c;
       // remove modal window
       elements.modal.remove();
