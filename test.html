@@ -22,24 +22,18 @@
     try {
       var j = JSON.parse(line);
       //console.log("Received JSON: ",j);
-     
-      console.log("loggggggg......");
       line1.append(new Date().getTime(), j.mag.x); 
      line2.append(new Date().getTime(), j.mag.y);
      line3.append(new Date().getTime(), j.mag.z);
      
       elements.light.setValue(j.light*100);
       elements.temp.setValue(j.temp);
-      //elements.temp2.setValue(j.temp);
       elements.batt.setValue(j.batt);
       elements.voltage.setValue(j.voltage);
       elements.magx.setValue(j.mag.x);
       elements.magy.setValue(j.mag.y);
       elements.magz.setValue(j.mag.z);
-      //elements.log.setValue(j.mag.x+','+j.mag.y+','+j.mag.z);
-
-      
-     
+ 
     } catch(e) {
       console.log("Received: ",line);
      
@@ -52,7 +46,6 @@
     smoothie.addTimeSeries(line2, { strokeStyle:'rgb(0, 0, 255)', lineWidth:2 });
     smoothie.addTimeSeries(line3, { strokeStyle:'rgb(255, 0, 0)', lineWidth:2 });
 
-   
     Puck.connect(function(c) {
       if (!c) {
         alert("Couldn't connect!");
