@@ -7,6 +7,7 @@
   <link href="https://espruino.github.io/TinyDash/tinydash.css" rel="stylesheet">
   <script src="https://espruino.github.io/TinyDash/tinydash.js"></script>
   <script src="https://www.puck-js.com/puck.js"></script>  
+  <script type="text/javascript" src="smoothie.js"></script>
   <script>
   // Called when we get a line of data - updates the light color
   function onLine(line) {
@@ -30,6 +31,8 @@
   }
   var connection;
   function connectDevice() {
+   var smoothie = new SmoothieChart();
+smoothie.streamTo(document.getElementById("mycanvas"));
     Puck.connect(function(c) {
       if (!c) {
         alert("Couldn't connect!");
@@ -93,5 +96,6 @@
        TD.update({magy : 40*Math.sin(Date.now()/1000)+50});
      }, 100);
   </script>
+  <div id="canvas"></div>
  </body>
 </html>
