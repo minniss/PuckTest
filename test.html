@@ -12,6 +12,10 @@
     var smoothie = new SmoothieChart();
     var line1 = new TimeSeries();
     line1.append(new Date().getTime(), 2000);  
+   var line2 = new TimeSeries();
+    line2.append(new Date().getTime(), 2000);
+   var line3 = new TimeSeries();
+    line3.append(new Date().getTime(), 2000);
   
   // Called when we get a line of data - updates the light color
   function onLine(line) {
@@ -21,6 +25,8 @@
      
       console.log("loggggggg......");
       line1.append(new Date().getTime(), j.mag.x); 
+     line2.append(new Date().getTime(), j.mag.y);
+     line3.append(new Date().getTime(), j.mag.z);
      
       elements.light.setValue(j.light*100);
       elements.temp.setValue(j.temp);
@@ -43,6 +49,8 @@
   function connectDevice() {
     smoothie.streamTo(document.getElementById("mycanvas"));
     smoothie.addTimeSeries(line1);
+   smoothie.addTimeSeries(line2);
+   smoothie.addTimeSeries(line3);
 
    
     Puck.connect(function(c) {
