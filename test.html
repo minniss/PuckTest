@@ -18,7 +18,9 @@
       //elements.temp2.setValue(j.temp);
       elements.batt.setValue(j.batt);
       elements.voltage.setValue(j.voltage);
-      elements.mag.setValue(j.mag);
+      elements.magx.setValue(j.mag.x);
+      elements.magy.setValue(j.mag.y);
+      elements.magz.setValue(j.mag.z);
      
     } catch(e) {
       console.log("Received: ",line);
@@ -64,7 +66,7 @@
   // Set up the controls we see on the screen    
   var elements = {
     heading : TD.label({x:10,y:10,width:190,height:50,label:"My Dashboard"}),
-    mag : TD.value({x:210,y:10,width:190,height:50,label:"Magnetometer",value:mag.x}),
+    magx : TD.value({x:210,y:10,width:190,height:50,label:"Magnetometer",value:"0"}),
     light : TD.gauge({x:10,y:70,width:190,height:220,label:"Light",value:0,min:0,max:100}),
     batt : TD.gauge({x:210,y:300,width:190,height:220,label:"Battery Level",value:0,min:0,max:100}),
     voltage : TD.gauge({x:420,y:300,width:190,height:220,label:"Battery Voltage",value:0,min:0,max:100}),
