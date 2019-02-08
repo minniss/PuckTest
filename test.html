@@ -98,7 +98,7 @@
      Puck.write("LED2.write("+v+");\n");
      Puck.write('NRF.nfcURL("http://espruino.com");\n');
     }}),
-    greenled : TD.toggle({x:210,y:620,width:200,height:90,label:"Blue LED",value:0,onchange:function(el,v) {
+    blueled : TD.toggle({x:210,y:620,width:200,height:90,label:"Blue LED",value:0,onchange:function(el,v) {
      console.log("Button pressed"+v); 
      Puck.write("LED3.write("+v+");\n");
      Puck.write('NRF.nfcURL("http://espruino.com");\n');
